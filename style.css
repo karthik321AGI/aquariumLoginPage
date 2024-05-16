@@ -1,0 +1,262 @@
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 2vmin;
+  background-color: #cdebf6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 5vmin;
+}
+
+/* Login Box and Register Box */
+.login-box,
+.register-box {
+  background-color: #966f33;
+  padding: 2vmin;
+  border-radius: 1vmin;
+  box-shadow: 0 0 1vmin rgba(0, 0, 0, 0.3);
+  position: relative;
+  width: 20vmin;
+  margin: 0 15vmin;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Stone */
+.stone {
+  width: 3vmin;
+  height: 3vmin;
+  background-color: #5d4037;
+  border-radius: 50%;
+  position: absolute;
+  top: -2vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
+  box-shadow: 0 0 0.5vmin rgba(0, 0, 0, 0.3);
+}
+
+.pond {
+  width: 80vmin;
+  height: 20vmin;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+  border-radius: 0 0 1vmin 1vmin;
+  box-shadow: 0 0 1vmin rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, #00bfff, #004080);
+  animation: water-animation 10s infinite linear;
+  
+}
+
+/* Fish */
+.fish {
+  position: absolute;
+  width: 5vmin;
+  height: 5vmin;
+  animation: swimFish 25s infinite linear;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Fish positions and animation delays */
+.fish1 { left: 10%; top: 30%; animation-delay: 0s; }
+.fish2 { left: 80%; top: 60%; animation-delay: 7.5s; }
+.fish3 { left: 50%; top: 20%; animation-delay: 15s; }
+
+@keyframes swimFish {
+  0% { transform: translate(2, -10vmin); }
+  25% { transform: translate(-70vmin, -10vmin); }
+  50% { transform: translate(-70vmin, 0); }
+  75% { transform: translate(0, 0); }
+  100% { transform: translate(0, -10vmin); }
+}
+
+/* Plant positions */
+.plant { position: absolute; width: 8vmin; height: 8vmin; }
+.plant1 { left: 20%; bottom: 0; }
+.plant2 { right: 10%; bottom: 0%; }
+.plant3 { left: 5%; bottom: -14%; }
+
+/* Other positions */
+.others { 
+  position: absolute; 
+}
+.house1 { width: 8vmin; height: 8vmin; right: 30%; bottom: -2%; }
+.starfish1 { width: 8vmin;height: 5vmin; left: 40%; bottom: 70%; }
+
+
+
+/* Login and Register Forms */
+.form {
+  display: none;
+  position: absolute;
+  top: -40vmin;
+  left: 50%;
+  transform: translate(-50%, 0) scale(0.8);
+  background-color: #fff;
+  padding: 5vmin;
+  border-radius: 0.5vmin;
+  box-shadow: 0 0 1vmin rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  max-width: 40vmin;
+  width: 100%;
+  text-align: center;
+}
+
+.form h3 {
+  margin-top: 0;
+}
+
+.form input,
+.form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 1.5vmin;
+  padding: 1.2vmin;
+  border: 0.1vmin solid #ccc;
+  border-radius: 0.5vmin;
+  font-size: 1.6vmin;
+}
+
+.form button {
+  width: 12vmin;
+  background-color: #966f33;
+  color: #fff;
+  cursor: pointer;
+  margin: 3vmin auto 0;
+  
+}
+
+
+
+.form p {
+ margin-top: 1.5vmin;
+ font-size: 0.8rem;
+}
+
+.form a {
+ color: #966f33;
+ text-decoration: none;
+}
+
+.form a:hover {
+ text-decoration: underline;
+}
+
+
+
+.show-form {
+ display: block;
+ opacity: 1;
+ transform: translate(-50%, 100%) scale(1);
+ animation: slideOut 0.5s ease-in-out forwards;
+}
+
+@keyframes slideOut {
+ 0% {
+   transform: translate(-50%, 50%) scale(0);
+ }
+ 100% {
+   transform: translate(-50%, -50%) scale(1);
+ }
+}
+
+/* Rock Texture */
+.login-box::before,
+.register-box::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-image: radial-gradient(
+   circle,
+   rgba(0, 0, 0, 0.1) 20%,
+   transparent 0
+ );
+ background-size: 1vmin 1vmin;
+ background-position: 0 0, 0.5vmin 0.5vmin;
+ opacity: 0.3;
+}
+
+.disappear {
+ animation: disappear 0s ease-in-out forwards;
+}
+
+@keyframes disappear {
+ from {
+   opacity: 1;
+   transform: scale(1);
+ }
+ to {
+   opacity: 0;
+   transform: scale(0.2);
+ }
+}
+
+.bubbles {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ overflow: hidden;
+}
+
+.bubble {
+ width: 7px;
+ height: 7px;
+ background-color: rgba(255, 255, 255, 0.3);
+ border-radius: 50%;
+ position: absolute;
+ bottom: -20px;
+ animation: bubble-animation 5s infinite linear;
+}
+
+@keyframes bubble-animation {
+ 0% {
+   bottom: -20px;
+ }
+ 100% {
+   bottom: calc(100% + 20px);
+ }
+}
+
+.nature {
+ display: flex;
+ justify-content: space-between;
+ width: fit-content;
+}
+
+/* Style the cloud image */
+.sun {
+ position: absolute;
+ bottom: 70%;
+ right: 10%;
+ width: 150px;
+ height: 120px;
+}
+
+/* Style the birds animation */
+.bird1 {
+ position: absolute;
+ bottom: 60%;
+ left: 10%;
+ width: 150px;
+ height: 150px;
+}
+
+

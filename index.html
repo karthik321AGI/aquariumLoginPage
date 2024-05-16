@@ -1,0 +1,70 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login/Register Page</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="nature">
+    <img class="clouds sun" src="components/images/sun.svg" alt="Clouds" />
+    <lottie-player
+      class="birds bird1"
+      src="components/images/birdsFly2.json"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay
+    ></lottie-player>
+  </div>
+  <div class="container">
+    <div class="login-box">
+      <div class="stone"></div>
+      <h2>Login</h2>
+    </div>
+    <div class="pond">
+      <div class="aquarium">
+        <div class="bubbles">
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+        </div>
+        <img class="fish fish1" src="components/images/fish5.svg" alt="Fish 1" />
+        <img class="fish fish2" src="components/images/fish3.svg" alt="Fish 2" />
+        <img class="fish fish3" src="components/images/fish4.svg" alt="Fish 3" />
+        <img class="plant plant1" src="components/images/plant1.svg" alt="Plant 1" />
+        <img class="plant plant2" src="components/images/plant2.svg" alt="Plant 2" />
+        <img class="plant plant3" src="components/images/plant3.svg" alt="Plant 3" />
+        <img class="others house1" src="components/images/house1.svg" alt="House" />
+        <img class="others starfish1" src="components/images/starfish1.svg" alt="StarFish" />
+      </div>
+      <div class="login-form form">
+        <h3>Login</h3>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button>Login</button>
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+      <div class="register-form form">
+        <h3>Register</h3>
+        <input type="text" placeholder="Username" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <input type="password" placeholder="Confirm Password" />
+        <button>Register</button>
+        <p>Already have an account? <a href="#">Login</a></p>
+      </div>
+    </div>
+    <div class="register-box">
+      <div class="stone"></div>
+      <h2>Register</h2>
+    </div>
+  </div>
+  <audio style="display: none" preload="auto">
+    <source src="components/audio/stone_takeoff.mp3" type="audio/mpeg" />
+    <source src="components/audio/stone_splash.mp3" type="audio/mpeg" />
+  </audio>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
